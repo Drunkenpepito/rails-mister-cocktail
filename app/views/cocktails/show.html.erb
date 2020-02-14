@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1><%= @cocktail.name %></h1>
+        <h3>
+        <% @cocktail.doses.each do |dose| %> d
+          <%= dose.amount%>
+          <%= dose.unit %>
+          <%= dose.ingredient.name %>
+        </h3>
+        <h5><%= dose.description %> </h5>
+      </br>
+        <% end %>
+
+    </div>
+  </div>
+</div>
+
+<button> <%= link_to 'Back', cocktails_path %> </button>
+<!-- <button class="btn btn primary"> <%= link_to 'Update Cocktail', edit_cocktail_path(@cocktail) %> </button> -->
+<button > <%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %> </button>
+<button><%= link_to "Delete #{@cocktail.name}" , cocktail_path(@cocktail), data: {:confirm => 'Are you sure?'}, :method => :delete %> </button>
+</div>
+

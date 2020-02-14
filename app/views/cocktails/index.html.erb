@@ -1,0 +1,37 @@
+<!-- <div class="container card">
+  <div class="row">
+    <div class="col">
+      <ul>
+      <%# @cocktails.each do |cocktail| %>
+        <li><%#= link_to cocktail.name, cocktail_path(cocktail.id) %></li>
+      <% #end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-flat"> <%= link_to 'New Cocktail', new_cocktail_path %> </button>
+
+ -->
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_url "bar_banner.jpg" %>') ;">
+
+  <h1><strong> COCKTAIL</strong> Time </h1>
+  <h1><button class="btn btn-ghost"> <%= link_to 'Order here!', new_cocktail_path %> </button></h1>
+
+<div >
+   <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_url "cocktail.jpg" %>')">
+        <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+</div>
+
+
