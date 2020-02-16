@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Cocktail.destroy_all
 Ingredient.destroy_all
 puts "ingredients destroyed"
 Ingredient.create(name: "lemon")

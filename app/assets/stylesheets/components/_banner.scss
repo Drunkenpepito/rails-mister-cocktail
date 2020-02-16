@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  letter-spacing: 2px;
 }
 
 .banner h1 {
@@ -22,6 +23,24 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.image_tag {
+    border-style: solid;
+    border-color: white;
+}
+
+.left {
+ text-align:left;
+ margin-top: 20px;
+ border-style: solid;
+}
+
+.right {
+ text-align:right;
+ margin-top: 20px;
+ border-style: solid;
+}
+
 
 // .banner button {
 //   color: white;

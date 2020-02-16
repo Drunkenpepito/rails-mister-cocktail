@@ -6,9 +6,11 @@
   font-weight: bolder;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  font-size: 35px;
+  font-size: 25px;
   background-color: white;
-  margin-bottom: 20px;
+  margin-top: 20px;
+
+
 }
 
 .btn-ghost:hover {
@@ -46,7 +48,6 @@
 .btn-center {
   text-align: center;
   color: white;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 35px;
+
 }

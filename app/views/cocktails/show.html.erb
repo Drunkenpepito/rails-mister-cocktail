@@ -1,24 +1,43 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1><%= @cocktail.name %></h1>
-        <h3>
-        <% @cocktail.doses.each do |dose| %> d
-          <%= dose.amount%>
-          <%= dose.unit %>
-          <%= dose.ingredient.name %>
-        </h3>
-        <h5><%= dose.description %> </h5>
-      </br>
-        <% end %>
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_url "cocktail_show.jpg" %>') ;">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <h1><%= @cocktail.name %></h1>
+      </div>
     </div>
-  </div>
-</div>
+    </br>
 
-<button> <%= link_to 'Back', cocktails_path %> </button>
-<!-- <button class="btn btn primary"> <%= link_to 'Update Cocktail', edit_cocktail_path(@cocktail) %> </button> -->
-<button > <%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %> </button>
-<button><%= link_to "Delete #{@cocktail.name}" , cocktail_path(@cocktail), data: {:confirm => 'Are you sure?'}, :method => :delete %> </button>
+    <div class = "container">
+      <div class="row">>
+        <div class="col">
+                <% if @cocktail.photo.attached? %>
+                  <div><%= cl_image_tag(@cocktail.photo.key, class: "image_tag", height: 300, width: 400, crop: :fill) %></div>
+                <% else %>
+                  <%= image_tag("cocktail.jpg",:class => "image_tag") %>
+                <% end %>
+        </div>
+        <div class="col text-center">
+                <% @cocktail.doses.each do |dose| %>
+                  <div class="text-white">
+                  <h3><%= dose.ingredient.name %></h3>
+                  <h6><%= dose.description %></h6>
+                  </div>
+                <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </br>
+
+  <div class = "container">
+    <button class = "btn-ghost"> <%= link_to 'Back', cocktails_path %> </button>
+    <button class = "btn-ghost"> <%= link_to 'Update Cocktail', edit_cocktail_path(@cocktail) %> </button>
+    <button class = "btn-ghost"> <%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %> </button>
+    <button class = "btn-ghost"><%= link_to "Delete #{@cocktail.name}" , cocktail_path(@cocktail), data: {:confirm => 'Are you sure?'}, :method => :delete %> </button>
+  </div>
+
 </div>
 
